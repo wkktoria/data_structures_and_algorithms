@@ -11,4 +11,5 @@ def has_pair_with_sum(arr, sum):
 
     return False
 
-print(has_pair_with_sum([3,2,1,5], 7))
+
+print(has_pair_with_sum([3, 2, 1, 5], 7))

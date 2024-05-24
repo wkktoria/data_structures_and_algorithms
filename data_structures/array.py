@@ -8,7 +8,7 @@ class Array:
 
     def get(self, index):
         return self.data[index]
-    
+
     def push(self, item):
         self.data[self.length] = item
         self.length += 1
@@ -38,9 +38,9 @@ class Array:
 
 array = Array()
 
-array.push('hi')
-array.push('you')
-array.push('!')
+array.push("hi")
+array.push("you")
+array.push("!")
 
 print(array.pop())
 

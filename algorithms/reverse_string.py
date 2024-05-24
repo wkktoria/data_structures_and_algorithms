@@ -1,6 +1,6 @@
 def reverse_string(s):
-    if (len(s) == 0 or s == None):
-        return ''
+    if len(s) == 0 or s == None:
+        return ""
 
     chars = [c for c in s]
     start = 0
@@ -11,7 +11,8 @@ def reverse_string(s):
         start += 1
         end -= 1
 
-    return ''.join(chars)
+    return "".join(chars)
 
-s = 'Hello, World!'
+
+s = "Hello, World!"
 print(reverse_string(s))

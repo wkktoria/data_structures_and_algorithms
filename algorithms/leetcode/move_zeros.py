@@ -1,5 +1,5 @@
 def move_zeros(nums):
-    j = 0 # index of leftmost 0
+    j = 0  # index of leftmost 0
 
     for i in range(0, len(nums)):
         if i != j and nums[j] == 0:
@@ -7,7 +7,8 @@ def move_zeros(nums):
         if nums[j] != 0:
             j += 1
 
-a1 = [0,1,0,3,12]
+
+a1 = [0, 1, 0, 3, 12]
 move_zeros(a1)
 print(a1)
 
