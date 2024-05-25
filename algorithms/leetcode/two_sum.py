@@ -1,7 +1,7 @@
 import unittest
 
 
-# Time Complexity: O(a + b)?
+# Time Complexity: O(n)
 # Space Complexity: O(n)
 def two_sum(nums, target):
     d = {}  # value: index
