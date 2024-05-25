@@ -1,3 +1,8 @@
+import unittest
+
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
 def rotate(nums, k):
     temp = [None] * len(nums)
 
@@ -7,12 +12,25 @@ def rotate(nums, k):
     nums[:] = temp
 
 
-a1 = [1, 2, 3, 4, 5, 6, 7]
-k1 = 3
-rotate(a1, k1)
-print(a1)
+class TestRotate(unittest.TestCase):
+    def test_example1(self):
+        # given
+        nums = [1, 2, 3, 4, 5, 6, 7]
+        k = 3
+        # when
+        rotate(nums, k)
+        # then
+        self.assertEqual(nums, [5, 6, 7, 1, 2, 3, 4])
 
-a2 = [-1, -100, 3, 99]
-k2 = 2
-rotate(a2, k2)
-print(a2)
+    def test_example2(self):
+        # given
+        nums = [-1, -100, 3, 99]
+        k = 2
+        # when
+        rotate(nums, k)
+        # then
+        self.assertEqual(nums, [3, 99, -1, -100])
+
+
+if __name__ == "__main__":
+    unittest.main()
