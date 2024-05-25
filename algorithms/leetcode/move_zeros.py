@@ -1,3 +1,8 @@
+import unittest
+
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 def move_zeros(nums):
     j = 0  # index of leftmost 0
 
@@ -8,10 +13,23 @@ def move_zeros(nums):
             j += 1
 
 
-a1 = [0, 1, 0, 3, 12]
-move_zeros(a1)
-print(a1)
+class TextMoveZeros(unittest.TestCase):
+    def test_example1(self):
+        # given
+        nums = [0, 1, 0, 3, 12]
+        # when
+        move_zeros(nums)
+        # then
+        self.assertEqual(nums, [1, 3, 12, 0, 0])
 
-a2 = [0]
-move_zeros(a2)
-print(a2)
+    def test_example2(self):
+        # given
+        nums = [0]
+        # when
+        move_zeros(nums)
+        # then
+        self.assertEqual(nums, [0])
+
+
+if __name__ == "__main__":
+    unittest.main()
