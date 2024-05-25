@@ -1,3 +1,8 @@
+import unittest
+
+
+# Time Complexity: O(a + b)?
+# Space Complexity: O(n)
 def two_sum(nums, target):
     d = {}  # value: index
 
@@ -12,6 +17,34 @@ def two_sum(nums, target):
     return []
 
 
-print(two_sum([2, 7, 11, 15], 9))
-print(two_sum([3, 2, 4], 6))
-print(two_sum([3, 3], 6))
+class TestTwoSum(unittest.TestCase):
+    def test_example1(self):
+        # given
+        nums = [2, 7, 11, 15]
+        target = 9
+        # when
+        result = two_sum(nums, target)
+        # then
+        self.assertEqual(result, [0, 1])
+
+    def test_example2(self):
+        # given
+        nums = [3, 2, 4]
+        target = 6
+        # when
+        result = two_sum(nums, target)
+        # then
+        self.assertEqual(result, [1, 2])
+
+    def test_example3(self):
+        # given
+        nums = [3, 3]
+        target = 6
+        # when
+        result = two_sum(nums, target)
+        # then
+        self.assertEqual(result, [0, 1])
+
+
+if __name__ == "__main__":
+    unittest.main()
