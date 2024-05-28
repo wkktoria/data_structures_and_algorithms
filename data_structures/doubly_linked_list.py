@@ -77,6 +77,22 @@ class DoublyLinkedList:
                 previous_node.next.prev = previous_node
         self.length -= 1
 
+    def reverse(self):
+        previous_node = None
+        current_node = self.head
+        next_node = self.head
+
+        self.tail = self.head
+
+        while current_node != None:
+            next_node = current_node.next
+            current_node.next = previous_node
+            current_node.prev = next_node
+            previous_node = current_node
+            current_node = next_node
+
+        self.head = previous_node
+
     def __traverse_to_index(self, index):
         if index < 0:
             raise IndexError("Index cannot be negative")
@@ -104,8 +120,12 @@ class DoublyLinkedList:
 
 doubly_linked_list = DoublyLinkedList(4)
 doubly_linked_list.insert(0, 2)
+doubly_linked_list.append(32)
+doubly_linked_list.append(16)
 doubly_linked_list.print()
 doubly_linked_list.insert(1, 8)
 doubly_linked_list.print()
 doubly_linked_list.remove(1)
+doubly_linked_list.print()
+doubly_linked_list.reverse()
 doubly_linked_list.print()
