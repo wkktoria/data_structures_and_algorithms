@@ -35,6 +35,13 @@ class LinkedList:
         self.length += 1
 
     def insert(self, index, value):
+        if index < 0:
+            raise IndexError("Index cannot be negative")
+        elif index >= self.length:
+            raise IndexError(
+                "Index cannot be greater than or equal to the length of the list"
+            )
+
         if index == 0:
             self.prepend(value)
         elif index == self.length - 1:
