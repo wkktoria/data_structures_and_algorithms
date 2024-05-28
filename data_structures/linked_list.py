@@ -54,6 +54,13 @@ class LinkedList:
             self.length += 1
 
     def remove(self, index):
+        if index < 0:
+            raise IndexError("Index cannot be negative")
+        elif index >= self.length:
+            raise IndexError(
+                "Index cannot be greater than or equal to the length of the list"
+            )
+
         if index == 0:
             self.head = self.head.next
         else:
