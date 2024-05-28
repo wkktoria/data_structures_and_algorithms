@@ -68,6 +68,21 @@ class LinkedList:
             previous_node.next = previous_node.next.next
         self.length -= 1
 
+    def reverse(self):
+        previous_node = None
+        current_node = self.head
+        next_node = self.head
+
+        self.tail = self.head
+
+        while current_node != None:
+            next_node = current_node.next
+            current_node.next = previous_node
+            previous_node = current_node
+            current_node = next_node
+
+        self.head = previous_node
+
     def __traverse_to_index(self, index):
         if index < 0:
             raise IndexError("Index cannot be negative")
@@ -99,4 +114,6 @@ linked_list.prepend(2)
 linked_list.append(32)
 linked_list.print()
 linked_list.insert(2, 8)
+linked_list.print()
+linked_list.reverse()
 linked_list.print()
